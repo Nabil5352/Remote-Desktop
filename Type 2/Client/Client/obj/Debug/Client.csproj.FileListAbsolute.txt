@@ -1,0 +1,40 @@
+C:\Users\NewBil\AppData\Local\Temporary Projects\Client\bin\Debug\Client.exe.config
+D:\Workshop\Visual_Studio_Projects\Client\Client\bin\Debug\Client.exe.config
+D:\Workshop\Visual_Studio_Projects\Client\Client\bin\Debug\Client.exe
+D:\Workshop\Visual_Studio_Projects\Client\Client\bin\Debug\Client.pdb
+D:\Workshop\Visual_Studio_Projects\Client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+D:\Workshop\Visual_Studio_Projects\Client\Client\obj\Debug\Client.client.resources
+D:\Workshop\Visual_Studio_Projects\Client\Client\obj\Debug\Client.Properties.Resources.resources
+D:\Workshop\Visual_Studio_Projects\Client\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+D:\Workshop\Visual_Studio_Projects\Client\Client\obj\Debug\Client.exe
+D:\Workshop\Visual_Studio_Projects\Client\Client\obj\Debug\Client.pdb
+D:\Workshop\Visual_Studio_Projects\RemoteDesktop\Client\Client\bin\Debug\Client.exe.config
+D:\Workshop\Visual_Studio_Projects\RemoteDesktop\Client\Client\obj\Debug\Client.exe
+D:\Workshop\Visual_Studio_Projects\RemoteDesktop\Client\Client\obj\Debug\Client.pdb
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Client\Client\bin\Debug\Client.exe.config
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Client\Client\obj\Debug\Client.exe
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Client\Client\obj\Debug\Client.pdb
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Client\Client\obj\Debug\Client.client.resources
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Client\Client\obj\Debug\Client.Properties.Resources.resources
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Client\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Client\Client\bin\Debug\Client.exe
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Client\Client\bin\Debug\Client.pdb
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Client\Client\bin\Debug\Client.exe.config
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Client\Client\obj\Debug\Client.exe
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Client\Client\obj\Debug\Client.pdb
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Client\Client\bin\Debug\Client.exe
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Client\Client\bin\Debug\Client.pdb
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Client\Client\obj\Debug\Client.client.resources
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Client\Client\obj\Debug\Client.Properties.Resources.resources
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Client\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Client\Client\bin\Debug\Client.exe.config
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Client\Client\obj\Debug\Client.exe
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Client\Client\obj\Debug\Client.pdb
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Client\Client\bin\Debug\Client.exe
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Client\Client\bin\Debug\Client.pdb
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Client\Client\obj\Debug\Client.client.resources
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Client\Client\obj\Debug\Client.Properties.Resources.resources
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Client\Client\obj\Debug\Client.csproj.GenerateResource.Cache

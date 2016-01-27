@@ -1,0 +1,121 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Text;
+using System.Windows.Forms;
+using System.IO;
+using System.Threading;
+using System.Diagnostics;
+using System.Net;
+using System.Net.Sockets;
+
+namespace Client
+{
+    public partial class client : Form
+    {
+        private static Bitmap bmpScreenshot;
+        private static Graphics gfxScreenshot;
+        private bool _stopping = false;
+
+        public client()
+        {
+            InitializeComponent();
+            string path = @"C:\Users\remoteUpload\";
+            if (!Directory.Exists(path))
+            {
+                DirectoryInfo di = Directory.CreateDirectory(path);
+                di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
+            }
+        }
+
+        private void client_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            string path = @"C:\Users\remoteUpload\";
+            int i = 1;
+            if (Directory.Exists(path))
+            {
+                while (!_stopping)
+                {
+                    bmpScreenshot = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, PixelFormat.Format32bppArgb);
+                    gfxScreenshot = Graphics.FromImage(bmpScreenshot);
+                    gfxScreenshot.CopyFromScreen(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y, 0, 0, Screen.PrimaryScreen.Bounds.Size, CopyPixelOperation.SourceCopy);
+                    bmpScreenshot.Save(path + i + ".png");
+                    ClientService.SendFile(path + i + ".png");
+                    Thread.Sleep(100);
+                    i++;
+                }
+            }
+        }
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            _stopping = true;
+            this.Close();
+        }
+    }
+
+    class ClientService
+    {
+        public static string showMsg = "Idle";
+        public static void SendFile(string fileName)
+        {
+            try
+            {
+                IPAddress[] ipAddress = Dns.GetHostAddresses("localhost");
+                IPEndPoint ipEnd = new IPEndPoint(ipAddress[0], 5656);
+                Socket clientSock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.IP);
+
+
+                string filePath = "";
+
+                fileName = fileName.Replace("\\", "/");
+                while (fileName.IndexOf("/") > -1)
+                {
+                    filePath += fileName.Substring(0, fileName.IndexOf("/") + 1);
+                    fileName = fileName.Substring(fileName.IndexOf("/") + 1);
+                }
+
+
+                byte[] fileNameByte = Encoding.ASCII.GetBytes(fileName);
+                if (fileNameByte.Length > 850 * 1024)
+                {
+                    showMsg = "File size is more than 850kb, please try with small file.";
+                    return;
+                }
+
+                showMsg = "Buffering ...";
+                byte[] fileData = File.ReadAllBytes(filePath + fileName);
+                byte[] clientData = new byte[4 + fileNameByte.Length + fileData.Length];
+                byte[] fileNameLen = BitConverter.GetBytes(fileNameByte.Length);
+
+                fileNameLen.CopyTo(clientData, 0);
+                fileNameByte.CopyTo(clientData, 4);
+                fileData.CopyTo(clientData, 4 + fileNameByte.Length);
+
+                showMsg = "Connection to server ...";
+                clientSock.Connect(ipEnd);
+
+                showMsg = "File sending...";
+                clientSock.Send(clientData);
+
+                showMsg = "Disconnecting...";
+                clientSock.Close();
+                showMsg = "File transferred.";
+
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message == "No connection could be made because the target machine actively refused it")
+                    showMsg = "File Sending fail. Because server not running.";
+                else
+                    showMsg = "File Sending fail." + ex.Message;
+            }
+        }
+    }
+}

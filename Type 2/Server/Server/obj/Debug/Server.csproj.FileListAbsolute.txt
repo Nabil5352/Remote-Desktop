@@ -1,0 +1,40 @@
+C:\Users\NewBil\AppData\Local\Temporary Projects\Server\bin\Debug\Server.exe.config
+D:\Workshop\Visual_Studio_Projects\Server\Server\bin\Debug\Server.exe.config
+D:\Workshop\Visual_Studio_Projects\Server\Server\bin\Debug\Server.exe
+D:\Workshop\Visual_Studio_Projects\Server\Server\bin\Debug\Server.pdb
+D:\Workshop\Visual_Studio_Projects\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+D:\Workshop\Visual_Studio_Projects\Server\Server\obj\Debug\Server.Properties.Resources.resources
+D:\Workshop\Visual_Studio_Projects\Server\Server\obj\Debug\Server.server.resources
+D:\Workshop\Visual_Studio_Projects\Server\Server\obj\Debug\Server.csproj.GenerateResource.Cache
+D:\Workshop\Visual_Studio_Projects\Server\Server\obj\Debug\Server.exe
+D:\Workshop\Visual_Studio_Projects\Server\Server\obj\Debug\Server.pdb
+D:\Workshop\Visual_Studio_Projects\RemoteDesktop\Server\Server\bin\Debug\Server.exe.config
+D:\Workshop\Visual_Studio_Projects\RemoteDesktop\Server\Server\obj\Debug\Server.exe
+D:\Workshop\Visual_Studio_Projects\RemoteDesktop\Server\Server\obj\Debug\Server.pdb
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Server\Server\bin\Debug\Server.exe.config
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Server\Server\obj\Debug\Server.exe
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Server\Server\obj\Debug\Server.pdb
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Server\Server\bin\Debug\Server.exe
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Server\Server\bin\Debug\Server.pdb
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Server\Server\obj\Debug\Server.Properties.Resources.resources
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Server\Server\obj\Debug\Server.server.resources
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop\Server\Server\obj\Debug\Server.csproj.GenerateResource.Cache
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Server\Server\bin\Debug\Server.exe.config
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Server\Server\obj\Debug\Server.exe
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Server\Server\obj\Debug\Server.pdb
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Server\Server\bin\Debug\Server.exe
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Server\Server\bin\Debug\Server.pdb
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Server\Server\obj\Debug\Server.Properties.Resources.resources
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Server\Server\obj\Debug\Server.server.resources
+D:\Workshop\Visual_Studio_Projects\Test\RemoteDesktop1_2\Server\Server\obj\Debug\Server.csproj.GenerateResource.Cache
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Server\Server\bin\Debug\Server.exe.config
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Server\Server\obj\Debug\Server.exe
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Server\Server\obj\Debug\Server.pdb
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Server\Server\bin\Debug\Server.exe
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Server\Server\bin\Debug\Server.pdb
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Server\Server\obj\Debug\Server.Properties.Resources.resources
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Server\Server\obj\Debug\Server.server.resources
+D:\Workshop\Visual_Studio_Projects\Remote Desktop\Type 2\Server\Server\obj\Debug\Server.csproj.GenerateResource.Cache

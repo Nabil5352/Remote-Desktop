@@ -1,0 +1,113 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Text;
+using System.Windows.Forms;
+using System.IO;
+using System.Threading;
+using System.Diagnostics;
+using System.Net;
+using System.Net.Sockets;
+
+namespace Client
+{
+    public partial class client : Form
+    {
+        private static Bitmap bmpScreenshot;
+        private static Graphics gfxScreenshot;
+        Socket sock;
+        int sent;
+
+        public client()
+        {
+            InitializeComponent();
+        }
+
+        private bool _performCapturing;
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            btnStart.Enabled = false;
+            StartCapturing();
+        }
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            StopAllCapturing();
+        }
+
+        private void StartCapturing()
+        {
+            showMsg = "Starting...";
+            _performCapturing = true;
+            ClientBackgroundWorker.RunWorkerAsync();
+        }
+
+        private void StopAllCapturing()
+        {
+            showMsg = "Stopping...";
+            _performCapturing = false;
+            this.Close();
+        }
+
+        string showMsg = "Idle";
+        private void ClientTimer_Tick_1(object sender, EventArgs e)
+        {
+            label2.Text = showMsg;
+        }
+
+        private void ClientBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while (true)
+            {
+                if (_performCapturing)
+                {
+                    sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+                    try
+                    {
+                        sock.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 5656));
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Unable to connect!!");
+                    }
+
+                    bmpScreenshot = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, PixelFormat.Format32bppArgb);
+                    gfxScreenshot = Graphics.FromImage(bmpScreenshot);
+                    gfxScreenshot.CopyFromScreen(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y, 0, 0, Screen.PrimaryScreen.Bounds.Size, CopyPixelOperation.SourceCopy);
+
+                    MemoryStream ms = new MemoryStream();
+                    bmpScreenshot.Save(ms, ImageFormat.Png);
+                    BinaryWriter bw = new BinaryWriter(ms);
+                    byte[] bmpbytes = ms.ToArray();
+                    bmpScreenshot.Dispose();
+                    ms.Close();
+
+                    sent = SendData(sock, bmpbytes);
+                    sock.Close();
+                }
+            }
+         }
+
+        private int SendData(Socket sock, byte[] bmpbytes)
+        {
+            int total = 0;
+            int size = bmpbytes.Length;
+            int dataLeft = size;
+            int sent;
+
+            byte[] dataSize = new byte[4];
+            dataSize = BitConverter.GetBytes(size);
+            sent = sock.Send(dataSize);
+            while (total < size)
+            {
+                sent = sock.Send(bmpbytes, total, dataLeft, SocketFlags.None);
+                total += sent;
+                dataLeft -= sent;
+            }
+            return total;
+        }
+        }
+    }

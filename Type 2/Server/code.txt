@@ -1,0 +1,106 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using System.IO;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
+
+namespace Server
+{
+    public partial class server : Form
+    {
+        Socket sock;
+        Socket accp;
+        public server()
+        {
+            InitializeComponent();
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            _performReceiving = true;
+            btnStart.Enabled = false;
+            ServerBackgroundWorker.RunWorkerAsync();
+        }
+
+        string ShowMsg = "Stopped";
+        private void ServerTimer_Tick_1(object sender, EventArgs e)
+        {
+            lblServerStatus.Text = ShowMsg;
+        }
+
+        private bool _performReceiving;
+        private void ServerBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while (true)
+            {
+                if (_performReceiving)
+                {
+                    ShowMsg = "Starting";
+                    sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+                    sock.Bind(new IPEndPoint(0, 8));
+                    sock.Listen(0);
+
+                    accp = sock.Accept();
+                    sock.Close();
+
+                    new Thread(() =>
+                    {
+                        while (true)
+                        {
+                            byte[] sizeBuf = new byte[4];
+                            accp.Receive(sizeBuf, 0, sizeBuf.Length, 0);
+                            int size = BitConverter.ToInt32(sizeBuf, 0);
+                            MemoryStream ms = new MemoryStream();
+
+                            while (size > 0)
+                            {
+                                byte[] buffer;
+                                if (size < accp.ReceiveBufferSize)
+                                {
+                                    buffer = new byte[size];
+                                }
+                                else
+                                {
+                                    buffer = new byte[accp.ReceiveBufferSize];
+                                }
+
+                                int rec = accp.Receive(buffer, 0, buffer.Length, 0);
+                                size -= rec;
+
+                                ms.Write(buffer, 0, buffer.Length);
+                            }   
+                            byte[] data = ms.ToArray();
+
+                            Invoke((MethodInvoker)delegate
+                            {
+                                Image img = Image.FromStream(ms);
+                                ms.Close();
+                                pictureBox1.Image = img;
+                                this.pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;                               
+                            });
+                        }
+                    }).Start();
+                }
+            }
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            _performReceiving = false;
+            this.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            _performReceiving = false;
+            this.Close();
+        }
+    }
+}
